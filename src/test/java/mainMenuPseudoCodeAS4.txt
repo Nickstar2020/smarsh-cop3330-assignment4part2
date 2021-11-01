@@ -1,0 +1,38 @@
+class mainMenu {
+    create an array (size 100) of todoList's
+    (maybe would be better to make a stack or something inside so that it's easier to remove them/ add them)
+
+    open the mainMenu_gui_AS4
+
+    createNewTodo {
+        create a test case with no todoList in it
+        * run the createNewTodo method
+        * enter a name, date, and desc. for the test list
+        * test case should pass if the list exists in the array, and also if the data composed of the list matches the inputted data 
+    }
+
+    deleteTodo {
+        create a test case with a list already in it
+        * run the deleteTodo method
+        * test case should pass if the todoList no longer exists in the array
+    }
+
+    editTodo {
+        create a test case with a list already in it
+        * run the editTodo function
+        * change the name, date, and description of the list that was selected to something new
+        * test case should pass if all the new changes are accurate
+    }
+
+    saveList {
+        create a test case with a former list already in it
+        * run the saveList function
+        * test case should pass if the list that was saved, matches the saved one in the external storage
+    }
+
+    saveAllList {
+        create a test case that has a set amount of lists in the program
+        * run the saveAllList function by pressing the button
+        * test case should pass, if all the lists are saved to the external storage drive.
+    }
+}

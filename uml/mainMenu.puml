@@ -1,0 +1,67 @@
+@startuml
+class mainMenu {
+    (main app is the main tab of the application)
+    * has the ability to create todoList
+    * has the ability to delete todoList
+    * has the ability to edit todoList
+    * has the ability to save a singular todoList
+    * has the ability to save all todoList
+}
+
+entity createNewTodo {
+    (creates a new todolist from the todoList class.)
+    * opens the createNewTodo_gui_AS4 and once all the data is inputted, its then is displayed onto the mainMenu GUI
+    * creates and stores it into the appropriate array index that needs to be filled
+}
+
+entity deleteTodo {
+    (deletes a todoList when called)
+    * makes sure that it's removed from the stack/array
+    * updates the GUI, so it removes the deleted todoList
+}
+
+entity editTodo {
+    (edits a specific todoList variables)
+    * opens the editTodo_gui_AS4
+    * updates the GUI, so it shows the newly updated information
+}
+
+entity saveList {
+    (saves a single todoList to an external drive)
+    * opens external drive folder
+    * makes a save folder if it was not created
+    * grabs the specific todoList and copies it over to a txt file
+    * saves the file to the specific save folder location
+    * closes folders
+}
+entity saveAllList {
+    (saves all the todoList to an external drive)
+    * opens external drive folder
+    * makes a save folder if it was not created
+    ..
+    * runs a loop that grabs each todoList and then copies each one to its own txt file
+    saves each file while in the loop
+    ..
+    * closes folders
+}
+
+class todoList {
+    (is the class that opens the todo gui for whatever todo was selected)
+    * refer to the todoList.puml for more information on what this class does
+}
+
+mainMenu -> createNewTodo
+mainMenu -> deleteTodo
+mainMenu -> editTodo
+mainMenu -> saveList
+mainMenu -> saveAllList
+mainMenu -> todoList
+
+createNewTodo -> mainMenu
+deleteTodo -> mainMenu
+editTodo -> mainMenu
+saveList -> mainMenu
+saveAllList -> mainMenu
+saveList -> saveAllList : called in the loop to save each list
+
+@enduml

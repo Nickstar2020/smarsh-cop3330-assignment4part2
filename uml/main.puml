@@ -1,0 +1,11 @@
+@startuml
+class main {
+    Starts the other classes, and also runs the application
+    (* runs the mainMenu Class which in turn opens the GUI and allows access to the other class "todoList")
+}
+entity launch {
+    is a function that runs all the gui and classes
+}
+
+main->launch
+@enduml

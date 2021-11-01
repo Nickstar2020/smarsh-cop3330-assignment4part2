@@ -1,0 +1,48 @@
+class todoList {
+    store a name string var
+
+    store a description string var
+
+    store a date value
+
+    store items:
+        allocate size 100 of items
+
+    createItem method {
+        create a new test case with said function
+        * input description of item ("test")
+        * test case should pass if the item exists, and the description matches the inputted description
+    }
+
+    deleteItem method {
+        create a test case that contains an already existing item in a todoList
+        * delete the test case
+        * test case should pass when none of the items in the array are equal to the one that was deleted.
+    }
+
+    editItem method {
+        create a test case that contains an already existing item in a todoList
+        * make sure that when the edit button is selected, change the former description to something new
+        * test should pass when the array holding the description of said item is equal to the one that was edited
+    }
+
+    markAsDone method {
+        create a test case that ensures that the variable that determines whether an item is completed is equal to the value that makes it complete
+    }
+
+    markAsUndone method {
+        create a test case that ensures that the variable that determines whether an item is completed is equal to the value that makes it not complete
+    }
+
+    showCompleted method {
+        create a test case that ensures that, when checked that all the same items in a list are shown when a certain variable that marks an item as complete is true.
+    }
+
+    showUncompleted method {
+        create a test case that ensures that, when checked that all the same items in a list are shown when a certain variable that marks an item as incomplete is true.
+    }
+
+    showAll method {
+        create a test case that ensures that, when checked, all the same items in a list are shown regardless of the variable that determines if its done or not
+    }
+}

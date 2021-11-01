@@ -1,0 +1,80 @@
+@startuml
+class todoList {
+    * is added to the mainMenu 100 times
+    * has the ability to edit a description of the item
+    * has the ability to delete an item
+    * has the ability to make an item as complete/incomplete
+    * has the ability to show only completed/uncompleted items
+    (todoList is the list that can be clicked on inside the main tab of the app)
+}
+
+entity createItem {
+    (this method creates an item inside a todoList)
+    * open up the createNewItem_gui_AS4. Once details are entered, send them to the description string var
+    * display the new Item inside the todoList
+}
+
+entity deleteItem {
+    (this method deletes an item inside a todoList)
+    * Frees the item
+}
+
+entity editItem {
+    (this method allows one to edit an item already inside a list)
+    * open the editItem_gui_AS4. Once details are entered, overwrite the specific desc. string var
+    * update the todoList, so it has the new details.
+}
+
+entity markAsDone {
+    (this method will mark the item as complete)
+    * change the value of the specific item to the complete value
+    * update the todoList window to show that specific item as complete
+}
+
+entity markAsUndone {
+    (this method will mark the item as incomplete)
+    * change the value of the specific item to the incomplete value
+    * update the todoList window to show that specific item as incomplete
+}
+
+entity showCompleted {
+    (this function changes the GUI in the todoList to show only completed items in the todoList)
+    * hides all the items that are flagged as undone
+}
+
+entity showUncompleted {
+    (this function changes the GUI in the todoList to show only uncompleted items in the todoList)
+    * hides all the items that are flagged as done
+}
+
+entity showAll {
+    (this function changes the GUI in the todoList to show all items in the todoList)
+    * shows all items regardless of flagged
+}
+
+class mainMenu {
+    (is the main menu that handles the gui)
+    * todoList is opened from the main menu
+    * opens when a specific todoList is clicked on.
+}
+mainMenu -> todoList
+todoList -> createItem
+todoList -> deleteItem
+todoList -> editItem
+todoList -> markAsDone
+todoList -> markAsUndone
+todoList -> showCompleted
+todoList -> showUncompleted
+todoList -> showAll
+
+showAll -> todoList
+showUncompleted -> todoList
+showCompleted -> todoList
+createItem -> todoList
+deleteItem -> todoList
+editItem -> todoList
+markAsDone -> todoList
+markAsUndone -> todoList
+
+
+@enduml

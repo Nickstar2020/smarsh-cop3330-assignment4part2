@@ -1,0 +1,140 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solution
+ *  Copyright 2021 Nicholas Smarsh
+ */
+
+packages
+
+class todoList {
+    //todoList is the list that can be clicked on inside the main tab of the app
+    * is added to the mainMenu (100 times)
+    * has the ability to edit a description of the item
+    * has the ability to delete an item
+    * has the ability to make an item as complete/incomplete
+    * has the ability to show only completed/uncompleted items
+  -----------------------------------------------------------------
+  pseudo:
+
+    store a name string var
+
+    store a description string var
+
+    store a date value
+
+    store items:
+        allocate size 100 of items
+
+            * each item can hold a description string var
+
+            * each item can hold a value determining whether it is completed (starts off as incomplete)
+
+    createItem method {
+        //this method creates an item inside a todoList
+        * open up the createNewItem_gui_AS4. Once details are entered, send them to the description string var
+        * display the new Item inside the todoList
+    }
+    when a button is clicked (create) call createItem;
+
+    deleteItem method {
+        //this method deletes an item inside a todoList
+    }
+
+    editItem method {
+        //this method allows one to edit an item already inside a list
+        * open the editItem_gui_AS4. Once details are entered, overwrite the specific desc. string var
+        * update the todoList, so it has the new details.
+    }
+    when the right-click action "edit" is clicked on a specific item, then call the editItem method
+
+    markAsDone method {
+        //this method will mark the item as complete
+        * change the value of the specific item to the complete value
+        * update the todoList window to show that specific item as complete
+    }
+    when the right-click action "mark as done" is clicked, call the markAsDone method
+
+    markAsUndone method {
+        //this method will mark the item as incomplete
+        * change the value of the specific item to the incomplete value
+        * update the todoList window to show that specific item as incomplete
+    }
+    when the right-click action "mark as undone" is clicked, call the markAsDone method
+
+    showCompleted method {
+        //this function changes the GUI in the todoList to show only completed items in the todoList
+    }
+    when the menu action "Show -> Completed" is clicked, call the showCompleted method
+
+    showUncompleted method {
+        //this function changes the GUI in the todoList to show only uncompleted items in the todoList
+    }
+    when the menu action "Show -> Uncompleted" is clicked, call the showUncompleted method
+
+    showAll method {
+        //this function changes the GUI in the todoList to show all items in the todoList
+    }
+    when the menu action "Show -> All" is clicked, call the showAll method
+}
+
+class mainMenu {
+       //main app is the main tab of the application
+       * has the ability to create todoList
+       * has the ability to delete todoList
+       * has the ability to edit todoList
+       * has the ability to save a singular todoList
+       * has the ability to save all todoList
+    -------------------------------------------------------
+    pseudo:
+
+    create an array (size 100) of todoList's
+    (maybe would be better to make a stack or something inside so that it's easier to remove them/ add them)
+
+    open the mainMenu_gui_AS4
+
+    createNewTodo {
+        //creates a new todolist from the todoList class.
+        * opens the createNewTodo_gui_AS4 and once all the data is inputted, its then is displayed onto the mainMenu GUI
+        * creates and stores it into the appropriate array index that needs to be filled
+    }
+    When the "New Todo" button is pressed... then call the createNewTodo method.
+
+    deleteTodo {
+        //deletes a todoList when called
+        * makes sure that it's removed from the stack/array
+        * updates the GUI, so it removes the deleted todoList
+    }
+    When the right-click action "delete" is selected on a specific todoList... then call the deleteTodo method.
+
+    editTodo {
+        //edits a specific todoList variables
+        * opens the editTodo_gui_AS4
+        * updates the GUI, so it shows the newly updated information
+    }
+    When the right-click action "edit" is selected on a specific todoList... then call the editTodo method.
+
+    saveList {
+        //saves a single todoList to an external drive
+        * opens external drive folder
+        * makes a save folder if it was not created
+        * grabs the specific todoList and copies it over to a txt file
+        * saves the file to the specific save folder location
+        * closes folders
+    }
+    when the right-click action "save" is selected on a specific todoList... then call the saveList method
+
+    saveAllList {
+        //saves all the todoList to an external drive
+        * opens external drive folder
+        * makes a save folder if it was not created
+        * runs a loop that grabs each todoList and then copies each one to its own txt file
+            * saves each file while in the loop
+        * closes folders
+    }
+    when the "save all" button is selected in a list
+}
+
+class main {
+    //Starts the other classes, and also runs the application
+    * runs the mainMenu Class which in turn opens the GUI and allows access to the other class "todoList"
+}
+
