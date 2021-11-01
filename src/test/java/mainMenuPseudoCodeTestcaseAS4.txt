@@ -8,7 +8,7 @@ class mainMenu {
         create a test case with no todoList in it
         * run the createNewTodo method
         * enter a name, date, and desc. for the test list
-        * test case should pass if the list exists in the array, and also if the data composed of the list matches the inputted data 
+        * test case should pass if the list exists in the array, and also if the data composed of the list matches the inputted data
     }
 
     deleteTodo {
