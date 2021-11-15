@@ -8,7 +8,7 @@ packages
 class todoList {
     //todoList is the list that can be clicked on inside the main tab of the app
     * is added to the mainMenu (100 times)
-    * has the ability to edit a description of the item
+    * has the ability to edit a description or date of the item
     * has the ability to delete an item
     * has the ability to make an item as complete/incomplete
     * has the ability to show only completed/uncompleted items

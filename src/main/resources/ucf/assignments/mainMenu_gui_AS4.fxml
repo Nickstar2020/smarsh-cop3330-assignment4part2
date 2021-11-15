@@ -8,34 +8,36 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.mainMenuController">
    <children>
       <MenuBar layoutY="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu fx:id="menuBar" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Save all" />
-                  <MenuItem mnemonicParsing="false" text="Open" />
+              <MenuItem fx:id="saveAll" mnemonicParsing="false" text="Save all" />
+                  <MenuItem fx:id="Open" mnemonicParsing="false" text="Open" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="New Todo" />
+          <Menu fx:id="newTodo" mnemonicParsing="false" text="New Todo">
+               <items>
+                  <MenuItem fx:id="newTodoCreate" mnemonicParsing="false" onAction="#newTodoCreateClicked" text="Create a New Todo" />
+               </items></Menu>
         </menus>
       </MenuBar>
       <AnchorPane layoutY="25.0" prefHeight="377.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
          <children>
-            <TableView layoutX="14.0" layoutY="23.0" prefHeight="377.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="todoTable" layoutX="14.0" layoutY="23.0" prefHeight="377.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
-                <TableColumn editable="false" minWidth="-1.0" prefWidth="-1.0" sortable="false" text="Date Due" />
-                  <TableColumn editable="false" minWidth="-1.0" prefWidth="-1.0" sortable="false" text="Name" />
-                  <TableColumn editable="false" minWidth="-1.0" prefWidth="-1.0" sortable="false" text="Description" />
+                <TableColumn fx:id="dueDate" editable="false" minWidth="-1.0" prefWidth="-1.0" sortable="false" text="Date Due" />
+                  <TableColumn fx:id="todoName" editable="false" minWidth="-1.0"  prefWidth="-1.0" sortable="false" text="Name" />
+                  <TableColumn fx:id="todoDescription" editable="false" minWidth="-1.0"  prefWidth="-1.0" sortable="false" text="Description" />
               </columns>
                <contextMenu>
                   <ContextMenu>
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Save" />
-                        <MenuItem mnemonicParsing="false" text="Edit" />
-                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem fx:id="save" mnemonicParsing="false" text="Save" />
+                        <MenuItem fx:id="edit" mnemonicParsing="false" text="Edit" />
+                        <MenuItem fx:id="delete" mnemonicParsing="false" text="Delete" />
                      </items>
                   </ContextMenu>
                </contextMenu>

@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<TitledPane animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Create New Todo List" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<TitledPane animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Create New Todo List" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.mainMenuController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
-            <Button layoutX="526.0" layoutY="335.0" mnemonicParsing="false" text="Create" />
-            <DatePicker layoutX="176.0" layoutY="271.0" prefHeight="25.0" prefWidth="250.0" />
-            <TextField layoutX="176.0" layoutY="85.0" prefHeight="25.0" prefWidth="225.0" />
-            <TextArea layoutX="177.0" layoutY="142.0" prefHeight="109.0" prefWidth="225.0" wrapText="true" />
+            <Button fx:id="createTodoButton" layoutX="526.0" layoutY="335.0" mnemonicParsing="false" onAction="#createTodoButtonClicked" text="Create" />
+            <DatePicker fx:id="createTodoDate" layoutX="176.0" layoutY="271.0" prefHeight="25.0" prefWidth="250.0" />
+            <TextField fx:id="createTodoName" layoutX="176.0" layoutY="85.0" prefHeight="25.0" prefWidth="225.0" />
+            <TextArea fx:id="createTodoDescription" layoutX="177.0" layoutY="142.0" prefHeight="109.0" prefWidth="225.0" wrapText="true" />
             <Text layoutX="176.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
             <Text layoutX="176.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
             <Text layoutX="179.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
